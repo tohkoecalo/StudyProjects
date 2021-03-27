@@ -3,16 +3,25 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Game {
-    public static int readPlayerChose(){//while true
+    public static int readPlayerChose(){
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int input = 0;
-        try {
-            input = Integer.parseInt(br.readLine());
-        } catch(NumberFormatException | IOException e) {
-            System.err.println("Invalid input format");
-        }
-        if (input <= 0 || input > 3){
-            System.err.println("Invalid input value");
+        boolean isCorrect = false;
+        while (!isCorrect) {
+            isCorrect = true;
+            try {
+                input = Integer.parseInt(br.readLine());
+            } catch(NumberFormatException | IOException e) {
+                System.err.println("Invalid input format");
+                isCorrect = false;
+            }
+            if (input <= 0 || input > 3){
+                System.err.println("Invalid input value");
+                isCorrect = false;
+            }
+            if (!isCorrect){
+                System.out.print("Try again to enter a value: ");
+            }
         }
         return input;
     }
