@@ -1,9 +1,9 @@
 public class Archer extends Warrior {
-
-    public Archer(int health) {
-        super(health);
+    public Archer() {
+        super();
         weapon = new Bow();
         name = "Archer";
+        health = 100;
     }
 
     @Override
@@ -17,7 +17,7 @@ public class Archer extends Warrior {
     }
 
     @Override
-    public void getDamage(Weapon weapon) {
-
+    public void getDamage(int damage) {
+        health -= damage;
     }
 }

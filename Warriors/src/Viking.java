@@ -1,6 +1,7 @@
 public class Viking extends Warrior {
-    public Viking(int health) {
-        super(health);
+    public Viking() {
+        super();
+        health = 90;
         weapon = new Mace();
         name = "Viking";
     }
@@ -16,7 +17,7 @@ public class Viking extends Warrior {
     }
 
     @Override
-    public void getDamage(Weapon weapon) {
-
+    public void getDamage(int damage) {
+        health -= (int)(damage * 0.9);
     }
 }

@@ -1,8 +1,9 @@
 public class Knight extends Warrior {
-    public Knight(int health) {
-        super(health);
+    public Knight() {
+        super();
         weapon = new Sword();
         name = "Knight";
+        health = 110;
     }
 
     @Override
@@ -16,7 +17,7 @@ public class Knight extends Warrior {
     }
 
     @Override
-    public void getDamage(Weapon weapon) {
-
+    public void getDamage(int damage) {
+        health -= (int)(damage * 1.1);
     }
 }

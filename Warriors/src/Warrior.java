@@ -3,12 +3,10 @@ public abstract class Warrior {
     protected Weapon weapon;
     protected String name;
 
-    public Warrior(int health){
-        this.health = health;
-    }
+    public Warrior(){}
 
     public abstract int nextHitDamage();
-    public abstract void getDamage(Weapon weapon);
+    public abstract void getDamage(int damage);
 
     public void setNewWeapon(Weapon newWeapon){
         weapon = newWeapon;
@@ -21,6 +19,8 @@ public abstract class Warrior {
     public String getName(){
         return name;
     }
+
+    public int getHealth(){ return health; }
 
     public boolean isAlive(){
         return health > 0;
