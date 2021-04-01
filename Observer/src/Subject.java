@@ -4,10 +4,21 @@ public abstract class Subject {
     protected List<Observer> members;
     protected String name;
 
-    public abstract void registerMember(Observer member);
-    public abstract void removeMember(Observer member);
+    public void registerMember(Observer member){
+        members.add(member);
+        System.out.println(member.getName() + " joined");
+    }
+
+    public void removeMember(Observer member){
+        members.remove(member);
+        System.out.println(member.getName() + " disconnected");
+    }
+
     public abstract void notifyMembers(String message);
-    public abstract void sendMessage(String message);
+
+    public void sendMessage(String message){
+        notifyMembers(message);
+    }
 
     public String getName(){
         return  name;

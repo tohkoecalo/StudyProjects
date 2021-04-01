@@ -7,7 +7,8 @@ public class Main {
         user1.subscribe(chat);
         user2.subscribe(chat);
 
-        chat.sendMessage("Hello");
+        chat.sendMessage(user1.sendMessage());
+        chat.sendMessage(user2.sendMessage());
 
         user1.unsubscribe();
         user2.unsubscribe();

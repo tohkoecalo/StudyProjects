@@ -11,26 +11,9 @@ public class Chat extends Subject {
     }
 
     @Override
-    public void registerMember(Observer member){
-        members.add(member);
-        System.out.println(member.getName() + " joined");
-    }
-
-    @Override
-    public void removeMember(Observer member){
-        members.remove(member);
-        System.out.println(member.getName() + " disconnected");
-    }
-
-    @Override
     public void notifyMembers(String message){
         for (Observer member : members){
             member.update(message);
         }
-    }
-
-    @Override
-    public void sendMessage(String message) {
-        notifyMembers(message);
     }
 }
