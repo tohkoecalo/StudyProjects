@@ -5,7 +5,6 @@ public abstract class Warrior {
 
     public Warrior(){}
 
-    public abstract int nextHitDamage();
     public abstract void getDamage(int damage);
 
     public void setNewWeapon(Weapon newWeapon){
@@ -16,8 +15,8 @@ public abstract class Warrior {
         return weapon;
     }
 
-    public String getName(){
-        return name;
+    public int nextHitDamage() {
+        return weapon.getDamage();
     }
 
     public int getHealth(){ return health; }
