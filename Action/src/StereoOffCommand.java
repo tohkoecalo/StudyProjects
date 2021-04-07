@@ -9,4 +9,9 @@ public class StereoOffCommand extends Command{
     public void execute() {
         stereo.off();
     }
+
+    @Override
+    public void revertPreviousCommand() {
+        stereo.on();
+    }
 }

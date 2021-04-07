@@ -3,8 +3,8 @@ enum BlowerSpeed {
 }
 
 public class Blower {
-    private BlowerSpeed currentSpeed = BlowerSpeed.Medium;
-    private BlowerSpeed lastSpeed;
+    protected BlowerSpeed currentSpeed = BlowerSpeed.Medium;
+    protected BlowerSpeed lastSpeed;
 
     public void on(){
         System.out.println("Blower is on");
@@ -20,8 +20,4 @@ public class Blower {
         System.out.println("Blower speed is set to " + speed);
     }
 
-    public void revertLastAction(){
-        currentSpeed = lastSpeed;
-        System.out.println("Blower speed is reverted to " + currentSpeed);
-    }
 }

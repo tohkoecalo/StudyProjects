@@ -1,17 +1,17 @@
-public class BlowerOffCommand extends Command {
+public class BlowerOnCommand extends Command {
     private Blower blower;
 
-    public BlowerOffCommand(Blower blower){
+    public BlowerOnCommand(Blower blower){
         this.blower = blower;
     }
 
     @Override
     public void execute() {
-        blower.off();
+        blower.on();
     }
 
     @Override
     public void revertPreviousCommand() {
-        blower.on();
+        blower.off();
     }
 }

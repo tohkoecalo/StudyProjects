@@ -11,4 +11,10 @@ public class StereoOnWithCDCommand extends Command {
         stereo.setCd();
         stereo.setVolume(11);
     }
+
+    @Override
+    public void revertPreviousCommand() {
+        stereo.setVolume(0);
+
+    }
 }

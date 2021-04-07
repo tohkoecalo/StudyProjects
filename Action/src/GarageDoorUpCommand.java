@@ -8,4 +8,9 @@ public class GarageDoorUpCommand extends Command {
     public void execute() {
         garageDoor.up();
     }
+
+    @Override
+    public void revertPreviousCommand() {
+        garageDoor.down();
+    }
 }
